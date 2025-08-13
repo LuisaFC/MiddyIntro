@@ -1,8 +1,10 @@
-export async function handler() {
+import { makeHandler } from './middy/makeHandler'
+
+export const handler = makeHandler(async (event) => {
     return {
         statusCode: 200,
         body: JSON.stringify({
-            message: 'Hello, world!',
+            message: JSON.stringify(event),
         }),
     }
-}
+})
