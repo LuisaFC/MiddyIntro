@@ -4,7 +4,9 @@ export const handler = makeHandler(async (event) => {
     return {
         statusCode: 200,
         body: JSON.stringify({
-            message: JSON.stringify(event),
+            message: JSON.stringify({
+                nameSent: event?.body?.name,
+            }),
         }),
     }
 })

@@ -11,6 +11,9 @@ importers:
       '@middy/core':
         specifier: ^6.4.1
         version: 6.4.1
+      '@middy/http-json-body-parser':
+        specifier: ^6.4.2
+        version: 6.4.2
     devDependencies:
       '@eslint/js':
         specifier: ^9.31.0
@@ -73,6 +76,14 @@ packages:
 
   '@middy/core@6.4.1':
     resolution: {integrity: sha512-NaKLoLUSkoxite0hkw5Tsa3DmuWyhRkZBbhD1tvr7FCWmj+MaQapNEvKMOSVNx/ET4ifY3KnKp0Zm0Q141Xcmg==}
+    engines: {node: '>=20'}
+
+  '@middy/http-json-body-parser@6.4.2':
+    resolution: {integrity: sha512-m+a24oyJUUNUgRnsxeCU+3G3BzU+3GCsfYWBXMtAu1LeWX2fq/UhO1vVa5tbD0jlwo0K6uPTWZ0p/A2eW2V//A==}
+    engines: {node: '>=20'}
+
+  '@middy/util@6.4.2':
+    resolution: {integrity: sha512-4Lab5R26DC+gBBM2tSNx3+csEFFGFTqjRNzk607aGHzQeYFNzX1EroBdFvtIEdpy7svFm2CHwNlCRiJP/mQQWw==}
     engines: {node: '>=20'}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -609,6 +620,12 @@ snapshots:
   '@humanwhocodes/object-schema@2.0.3': {}
 
   '@middy/core@6.4.1': {}
+
+  '@middy/http-json-body-parser@6.4.2':
+    dependencies:
+      '@middy/util': 6.4.2
+
+  '@middy/util@6.4.2': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
