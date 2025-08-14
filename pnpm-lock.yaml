@@ -14,6 +14,9 @@ importers:
       '@middy/http-json-body-parser':
         specifier: ^6.4.2
         version: 6.4.2
+      '@middy/http-response-serializer':
+        specifier: ^6.4.2
+        version: 6.4.2
     devDependencies:
       '@eslint/js':
         specifier: ^9.31.0
@@ -80,6 +83,10 @@ packages:
 
   '@middy/http-json-body-parser@6.4.2':
     resolution: {integrity: sha512-m+a24oyJUUNUgRnsxeCU+3G3BzU+3GCsfYWBXMtAu1LeWX2fq/UhO1vVa5tbD0jlwo0K6uPTWZ0p/A2eW2V//A==}
+    engines: {node: '>=20'}
+
+  '@middy/http-response-serializer@6.4.2':
+    resolution: {integrity: sha512-8Hf36lORUNEgLhbfIR74epa/QJv2aE+HbkGMWY8o2e/ty5mMrqdqQ9HEiehEO7rm0YHt5Hz3s5J14LKwQpWf/A==}
     engines: {node: '>=20'}
 
   '@middy/util@6.4.2':
@@ -622,6 +629,10 @@ snapshots:
   '@middy/core@6.4.1': {}
 
   '@middy/http-json-body-parser@6.4.2':
+    dependencies:
+      '@middy/util': 6.4.2
+
+  '@middy/http-response-serializer@6.4.2':
     dependencies:
       '@middy/util': 6.4.2
 
