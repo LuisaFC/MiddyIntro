@@ -1,8 +1,9 @@
 import middy from "@middy/core";
-import httpJsonBodyParser from '@middy/http-json-body-parser'
-import httpResponseSerializer from '@middy/http-response-serializer'
+import httpJsonBodyParser from "@middy/http-json-body-parser";
+import httpResponseSerializer from "@middy/http-response-serializer";
+import { IHttpRequest, IHttpResponse } from "../types/IHttp";
 
-type Handler = (event: any) => Promise<any>;
+type Handler = (request: IHttpRequest) => Promise<IHttpResponse>;
 
 export function makeHandler(handler: Handler) {
   return middy()
@@ -16,5 +17,6 @@ export function makeHandler(handler: Handler) {
       }
     ]
   }))
+  // @ts-ignore
   .handler(handler);
 }
