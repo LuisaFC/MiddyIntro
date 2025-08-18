@@ -1,6 +1,11 @@
 import { makeHandler } from './middy/makeHandler'
 
-export const handler = makeHandler(async (request) => {
+interface IHelloRequestBody {
+    firstName: string
+    lastName: string
+}
+
+export const handler = makeHandler<IHelloRequestBody>(async (request) => {
     return {
         statusCode: 200,
         body: {
