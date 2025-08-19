@@ -27,3 +27,9 @@ functions:
       - httpApi:
           path: /
           method: POST
+  upload:
+    handler: src/upload.handler
+    events:
+      - httpApi:
+          path: /upload
+          method: POST

@@ -14,6 +14,9 @@ importers:
       '@middy/http-json-body-parser':
         specifier: ^6.4.2
         version: 6.4.3
+      '@middy/http-multipart-body-parser':
+        specifier: ^6.4.3
+        version: 6.4.3
       '@middy/http-response-serializer':
         specifier: ^6.4.2
         version: 6.4.3
@@ -64,6 +67,9 @@ packages:
     resolution: {integrity: sha512-5K1/mKhWaMfreBGJTwval43JJmkip0RmM+3+IuqupeSKNC/Th2Kc7ucaq5ovTSra/OOKB9c58CGSz3QMVbWt0A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@fastify/busboy@3.1.1':
+    resolution: {integrity: sha512-5DGmA8FTdB2XbDeEwc/5ZXBl6UbBAyBOOLlPuBnZ/N1SwdH9Ii+cOX3tBROlDgcTXxjOYnLMVoKk9+FXAw0CJw==}
+
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
     engines: {node: '>=10.10.0'}
@@ -83,6 +89,10 @@ packages:
 
   '@middy/http-json-body-parser@6.4.3':
     resolution: {integrity: sha512-aALYb9EQNEIjy2E7wHRXQpvV1cR3m0GVQ6hct+ZNFmErCaqXbiq4ArjNnYfsgWhjdKzG5lvbXQ4SumRMSFYijA==}
+    engines: {node: '>=20'}
+
+  '@middy/http-multipart-body-parser@6.4.3':
+    resolution: {integrity: sha512-PbL7WGH+a+qjQE8FeVMHE8giDOFd2KsKOEQ7R4fF1um5fbf0xRCUKvqjFxULqru3BKGXxyR8hlC4tINIou9dwA==}
     engines: {node: '>=20'}
 
   '@middy/http-response-serializer@6.4.3':
@@ -614,6 +624,8 @@ snapshots:
 
   '@eslint/js@9.33.0': {}
 
+  '@fastify/busboy@3.1.1': {}
+
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -631,6 +643,10 @@ snapshots:
   '@middy/http-json-body-parser@6.4.3':
     dependencies:
       '@middy/util': 6.4.3
+
+  '@middy/http-multipart-body-parser@6.4.3':
+    dependencies:
+      '@fastify/busboy': 3.1.1
 
   '@middy/http-response-serializer@6.4.3':
     dependencies:
