@@ -2,14 +2,11 @@ import middy from "@middy/core";
 import httpJsonBodyParser from "@middy/http-json-body-parser";
 import httpResponseSerializer from "@middy/http-response-serializer";
 import httpMultipartBodyParser from "@middy/http-multipart-body-parser";
-import { IHttpRequest, IHttpResponse } from "../types/IHttp";
+import { IHttpRequest, IHttpResponse } from "../../application/types/IHttp";
 import { errorHandler } from "./middlewares/errorHandler";
+import { IController } from "../../application/types/IController";
 
-type Handler<TBody extends Record<string, any> | undefined> = (request: IHttpRequest<TBody>) => Promise<IHttpResponse>;
-
-export function makeHandler<TBody extends Record<string, any> | undefined = undefined>(
-    handler: Handler<TBody>
-) {
+export function slsHandlerAdapter(controller: IController<any>){
   return middy()
   .use(httpJsonBodyParser({disableContentTypeError: true}))
   .use(httpMultipartBodyParser({ disableContentTypeError: true }))
@@ -24,5 +21,11 @@ export function makeHandler<TBody extends Record<string, any> | undefined = unde
     ]
   }))
   // @ts-ignore
-  .handler(handler);
+  .handler(async (event) => {
+    return controller.handler({
+        body: event.body,
+        headers: event.headers,
+        params: event.pathParameters ?? undefined
+    })
+  });
 }

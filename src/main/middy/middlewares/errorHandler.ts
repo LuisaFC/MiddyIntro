@@ -1,5 +1,5 @@
 import { MiddlewareObj } from "@middy/core";
-import { HttpError } from "../../errors/HttpError";
+import { HttpError } from "../../../application/errors/HttpError";
 
 export function errorHandler(): MiddlewareObj {
     return {

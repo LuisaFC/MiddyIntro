@@ -1,7 +1,7 @@
 export interface IHttpRequest<TBody extends Record<string, any> | undefined> {
     body?: TBody;
-    headers?: Record<string, string>;
-    pathParameters?: Record<string, string>;
+    headers?: Record<string, string | undefined>;
+    params?: Record<string, string | undefined>;
 }
 
 export interface IHttpResponse {
