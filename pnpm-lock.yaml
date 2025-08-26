@@ -20,6 +20,9 @@ importers:
       '@middy/http-response-serializer':
         specifier: ^6.4.2
         version: 6.4.3
+      '@middy/http-router':
+        specifier: ^6.4.3
+        version: 6.4.3
     devDependencies:
       '@eslint/js':
         specifier: ^9.31.0
@@ -97,6 +100,10 @@ packages:
 
   '@middy/http-response-serializer@6.4.3':
     resolution: {integrity: sha512-AJuhFGm1SPcakuaiRVLyZXVaqRNa9l5iuT0nyzWDZeMS3Dm8SiDobpCirK5fz/N4/uPh8XGVM/1NeEeTi7t1bg==}
+    engines: {node: '>=20'}
+
+  '@middy/http-router@6.4.3':
+    resolution: {integrity: sha512-csmwYOqWp7iSfz+KULBBO40sAfHvEUI3UFXDy6ky+V+DQOwvD8DLzvmjsMik8eAZrtuBI9DbCSCxSZPfwcGDBg==}
     engines: {node: '>=20'}
 
   '@middy/util@6.4.3':
@@ -649,6 +656,10 @@ snapshots:
       '@fastify/busboy': 3.1.1
 
   '@middy/http-response-serializer@6.4.3':
+    dependencies:
+      '@middy/util': 6.4.3
+
+  '@middy/http-router@6.4.3':
     dependencies:
       '@middy/util': 6.4.3
 

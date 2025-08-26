@@ -6,7 +6,7 @@ export function errorHandler(): MiddlewareObj {
         onError: (request) => {
             const {error} = request;
 
-            if(error instanceof HttpError) {
+            if(error && (error instanceof HttpError || 'statusCode' in error)){
                 request.response = {
                     statusCode: error.statusCode,
                     body: error.message,
